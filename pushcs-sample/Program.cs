@@ -9,6 +9,9 @@ namespace pushcs_sample
     {
         public void Main(string[] args)
         {
+			var ar = new pushcs.Api.ApiRoot();
+
+			ar.Push("asadasdasd", "asdasdasd");
         }
     }
 }
