@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CF09EC5D-D4AA-492C-9BDF-767F7F69909A}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pushcs", "pushcs", "{B786E179-128B-4828-8534-A9D5EE514EE9}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "pushcs", "pushcs\pushcs.xproj", "{227AF3C0-381A-4D40-BA76-8396EFF9F2E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pushcs-sample", "pushcs-sample", "{E3CBF864-E4F8-4201-8960-382D3932470F}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "pushcs-sample", "pushcs-sample\pushcs-sample.xproj", "{2914AB69-5373-47A1-8416-80937A084944}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{227AF3C0-381A-4D40-BA76-8396EFF9F2E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{227AF3C0-381A-4D40-BA76-8396EFF9F2E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{227AF3C0-381A-4D40-BA76-8396EFF9F2E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{227AF3C0-381A-4D40-BA76-8396EFF9F2E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2914AB69-5373-47A1-8416-80937A084944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2914AB69-5373-47A1-8416-80937A084944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2914AB69-5373-47A1-8416-80937A084944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2914AB69-5373-47A1-8416-80937A084944}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{227AF3C0-381A-4D40-BA76-8396EFF9F2E1} = {B786E179-128B-4828-8534-A9D5EE514EE9}
+		{2914AB69-5373-47A1-8416-80937A084944} = {E3CBF864-E4F8-4201-8960-382D3932470F}
+	EndGlobalSection
+EndGlobal
