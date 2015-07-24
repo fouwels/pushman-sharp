@@ -17,6 +17,9 @@ namespace pushcs.Api
 		private WebClient wc;
 		public string _userAgent { get; private set; }
 		public string _baseUrl { get; private set; }
+
+		/// <param name="BaseUrl">Base URL of your server</param>
+		/// <param name="UserAgent">User Agent you wish to provide</param>
 		public ApiRoot(string BaseUrl = "http://live.pushman.dfl.mn", string UserAgent = "")
 		{
 			_userAgent = UserAgent;

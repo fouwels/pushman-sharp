@@ -19,7 +19,7 @@ namespace pushcs
 
 		}
 
-		public async Task<Api.Responses.PushResponse> PushEvent(string Name, List<string> Channels = null, string Data)
+		public async Task<Api.Responses.PushResponse> PushEvent(string Name, string Data, List<string> Channels = null)
 		{
 			return ap.Push(_key, Name, string.Join(",", Channels), Data);
 		}

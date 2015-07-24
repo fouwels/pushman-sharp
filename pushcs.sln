@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CF09EC5D-D4AA-492C-9BDF-767F7F69909A}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
+		readme.md = readme.md
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "pushcs", "pushcs\pushcs.xproj", "{227AF3C0-381A-4D40-BA76-8396EFF9F2E1}"
