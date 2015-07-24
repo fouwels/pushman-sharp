@@ -7,6 +7,8 @@ namespace pushcs.Api.Responses
 {
 	public class ChannelResponseGet
 	{
+		public string status { get; set; }
+		public string message { get; set; }
 		public string id { get; set; }
 		public string name { get; set; }
 		public string @public { get; set; }
@@ -25,6 +27,8 @@ namespace pushcs.Api.Responses
 	}
 	public class ChannelResponsePost
 	{
+		public string status { get; set; }
+		public string message { get; set; }
 		public string name { get; set; }
 		public string refreshes { get; set; }
 		public int max_connections { get; set; }

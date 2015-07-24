@@ -7,6 +7,8 @@ namespace pushcs.Api.Responses
 {
 	public class SubscribersResponse
 	{
+		public string status { get; set; }
+		public string message { get; set; }
 		//public __invalid_type__375 __invalid_name__375 { get; set; }
 		//public __invalid_type__478 __invalid_name__478 { get; set; }
 		//public class Userdata

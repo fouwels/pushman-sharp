@@ -6,7 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using pushcs.Api;
 using System.Net;
+using System.Web;
 using Newtonsoft.Json;
+using System.Net.Http;
 
 namespace pushcs.Api
 {
@@ -40,14 +42,19 @@ namespace pushcs.Api
 			//var x = System.Net.HttpWebRequest.CreateHttp(_baseUrl +  "/api/push");
 			//x.UserAgent = _userAgent;
 			//x.Method = "POST";
-			var respstr = wc.Encoding.GetString(wc.UploadValues("/api/push", new System.Collections.Specialized.NameValueCollection
-			{
-				{ "private", Private },
-				{ "event", Event },
-				{ "channels", Channels },
-				{ "payload", Payload }
-			}));
-			return JsonConvert.DeserializeObject<Responses.PushResponse>(respstr);
+			var response = wc.Encoding.GetString(wc.UploadValues(
+				address: "/api/push",
+				method: "POST",
+				data: new System.Collections.Specialized.NameValueCollection
+				{
+					{ "private", Private },
+					{ "event", Event },
+					{ "channels", Channels },
+					{ "payload", Payload }
+				}
+			));
+
+			return JsonConvert.DeserializeObject<Responses.PushResponse>(response);
 		}
 		/// <summary>
 		/// This method returns a list of all channels associated with your site. (including internal channels and the public chanel)
@@ -56,7 +63,10 @@ namespace pushcs.Api
 		/// <returns></returns>
 		public Responses.ChannelsResponse Channels(string Private)
 		{
-			throw new NotImplementedException();
+			var response = wc.Encoding.GetString(wc.DownloadData(
+				address: "/api/channels" + "?private=" + Private
+			));
+			return JsonConvert.DeserializeObject<Responses.ChannelsResponse>(response);
 		}
 		/// <summary>
 		/// This method returns information on a channel.
@@ -66,7 +76,10 @@ namespace pushcs.Api
 		/// <returns></returns>
 		public Responses.ChannelResponseGet ChannelGet(string Private, string Channel)
 		{
-			throw new NotImplementedException();
+			var response = wc.Encoding.GetString(wc.DownloadData(
+				address: "/api/channel" + "?private=" + Private + "&channel=" + Channel
+			));
+			return JsonConvert.DeserializeObject<Responses.ChannelResponseGet>(response);
 		}
 		/// <summary>
 		/// This method builds a set of channels or single channel.
@@ -78,7 +91,21 @@ namespace pushcs.Api
 		/// <returns></returns>
 		public Responses.ChannelResponsePost ChannelPost(string Private, string Channel, int max = 0, bool refreshes = false)
 		{
-			throw new NotImplementedException();
+			var vals = new System.Collections.Specialized.NameValueCollection
+				{
+					{ "private", Private },
+					{ "channel", Channel }
+				};
+			if (max != 0) {	vals.Add("max", max.ToString()); }
+			vals.Add("refreshes", refreshes ? "yes" : "no");
+
+            var response = wc.Encoding.GetString(wc.UploadValues(
+				address: "/api/push",
+				method: "POST",
+				data: vals
+			));
+
+			return JsonConvert.DeserializeObject<Responses.ChannelResponsePost>(response);
 		}
 		/// <summary>
 		/// This method destroys a set of channels or single channel.
@@ -88,7 +115,17 @@ namespace pushcs.Api
 		/// <returns></returns>
 		public Responses.ChannelResponseDelete ChannelDelete(string Private, string Channel)
 		{
-			throw new NotImplementedException();
+			var response = wc.Encoding.GetString(wc.UploadValues(
+				address: "/api/channel",
+				method: "DELETE",
+				data: new System.Collections.Specialized.NameValueCollection
+				{
+					{ "private", Private },
+					{ "channel", Channel }
+				}
+			));
+
+			return JsonConvert.DeserializeObject<Responses.ChannelResponseDelete>(response);
 		}
 		/// <summary>
 		/// This method returns a list of all subscribers listening to a specific channel on a site, along with their IP and userdata.
@@ -98,7 +135,10 @@ namespace pushcs.Api
 		/// <returns></returns>
 		public Responses.SubscribersResponse Subscribers(string Private, string Channel)
 		{
-			throw new NotImplementedException();
+			var response = wc.Encoding.GetString(wc.DownloadData(
+				address: "/api/subscribers" + "?private=" + Private + "&channel=" + Channel
+			));
+			return JsonConvert.DeserializeObject<Responses.SubscribersResponse>(response);
 		}
 	}
 }
