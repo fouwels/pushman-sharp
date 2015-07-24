@@ -10,19 +10,21 @@ namespace pushcs_sample
     {
         public void Main(string[] args)
         {
-			//var configuration = new Configuration();
-			//configuration.AddJsonFile("config.json");
-			//configuration.AddUserSecrets();
-
 			var testkey = "this_is_a_60_char_string_that_looks_like_a_valid_private_key";
 
-			var ap = new pushcs.Api.ApiRoot();
-			var push =			ap.Push(			Private: testkey, Event: "ayy", Payload: "{\"ayy\" : \"lemayo\"}");
-			var channels =		ap.Channels(		Private: testkey);
-			var channelget =	ap.ChannelGet(		Private: testkey, Channel: "auth");
-			var channelpost =	ap.ChannelPost(		Private: testkey, Channel: "auth");
-			var channeldelete = ap.ChannelDelete(	Private: testkey, Channel: "auth");
-			var subscribers =	ap.Subscribers(		Private: testkey, Channel: "auth");
+			//call api endpoints directly. Check the method tooltips, or XML comments directly
+			var ap = new pushcs.Api.ApiRoot(
+				BaseUrl: "http://live.pushman.dfl.mn/", UserAgent: "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36");
+
+			var a =	ap.Push(Private: testkey, Event: "ayy", Payload: "{\"ayy\" : \"lemayo\"}");
+			var b =	ap.Channels(Private: testkey);
+			var c =	ap.ChannelGet(Private: testkey, Channel: "auth");
+			var d =	ap.ChannelPost(Private: testkey, Channel: "auth");
+			var e = ap.ChannelDelete(Private: testkey, Channel: "auth");
+			var f =	ap.Subscribers(Private: testkey, Channel: "auth");
+
+			var client = new pushcs.Client.Client();
+
         }
     }
 }
