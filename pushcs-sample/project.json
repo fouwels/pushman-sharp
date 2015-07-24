@@ -1,29 +1,27 @@
-{
-    "version": "1.0.0-*",
-    "description": "pushcs-sample Console Application",
-    "authors": [ "Kaelan" ],
-    "tags": [ "" ],
-    "projectUrl": "",
-    "licenseUrl": "",
+﻿{
+	"userSecretsId": "aspnet5-pushcs-sample-20150724043443",
+	"version": "1.0.0-*",
+	"description": "pushcs-sample Console Application",
+	"authors": [ "Kaelan" ],
+	"tags": [ "" ],
+	"projectUrl": "",
+	"licenseUrl": "",
 
-    "dependencies": {
-        "pushcs": "1.0.0-*"
-    },
+	"dependencies": {
+		"pushcs": "1.0.0-*",
+		"Microsoft.Framework.ConfigurationModel": "1.0.0-beta4",
+		"Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta5",
+		"Microsoft.Framework.ConfigurationModel.UserSecrets": "1.0.0-beta4",
+		"Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta4",
+		"Microsoft.Framework.Configuration": "1.0.0-beta5",
+		"Microsoft.Framework.Configuration.Json": "1.0.0-beta5"
+	},
 
-    "commands": {
-        "pushcs_sample": "pushcs_sample"
-    },
+	"commands": {
+		"pushcs-sample": "pushcs-sample"
+	},
 
-    "frameworks": {
-        "dnx451": { },
-        "dnxcore50": {
-            "dependencies": {
-                "System.Collections": "4.0.10-beta-23019",
-                "System.Console": "4.0.0-beta-23019",
-                "System.Linq": "4.0.0-beta-23019",
-                "System.Threading": "4.0.10-beta-23019",
-                "Microsoft.CSharp": "4.0.0-beta-23019"
-            }
-        }
-    }
+	"frameworks": {
+		"dnx451": { }
+	}
 }

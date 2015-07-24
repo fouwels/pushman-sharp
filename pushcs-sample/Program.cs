@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Framework.ConfigurationModel;
 
 namespace pushcs_sample
 {
@@ -9,9 +10,12 @@ namespace pushcs_sample
     {
         public void Main(string[] args)
         {
-			var ar = new pushcs.Api.ApiRoot();
+			//var configuration = new Configuration();
+			//configuration.AddJsonFile("config.json");
+			//configuration.AddUserSecrets();
 
-			ar.Push("asadasdasd", "asdasdasd");
+			var ap = new pushcs.Api.ApiRoot();
+			var x = ap.Push(Private: "this_is_a_60_char_string_that_looks_like_a_valid_private_key" , Event: "ayy", Payload: "{\"ayy\" : \"lemayo\"}");
         }
     }
 }

@@ -6,17 +6,26 @@ using System.Linq;
 using System.Threading.Tasks;
 using pushcs.Api;
 using System.Net;
+using Newtonsoft.Json;
 
 namespace pushcs.Api
 {
 	public class ApiRoot
 	{
+		private WebClient wc;
 		public string _userAgent { get; private set; }
 		public string _baseUrl { get; private set; }
-		public ApiRoot(string UserAgent = "", string BaseUrl = "http://live.pushman.dfl.mn")
+		public ApiRoot(string BaseUrl = "http://live.pushman.dfl.mn", string UserAgent = "")
 		{
 			_userAgent = UserAgent;
-			_baseUrl = BaseUrl;
+			_baseUrl = (BaseUrl.ToArray().Last() != '/') ? BaseUrl : BaseUrl.Remove(BaseUrl.Length - 1);
+
+			wc = new WebClient();
+			wc.BaseAddress = _baseUrl;
+			if (_userAgent != "")
+			{
+				wc.Headers["User-Agent"] = _userAgent;
+			}
 		}
 		/// <summary>
 		/// This endpoint pushes an event to all listening clients on a single site.
@@ -28,10 +37,17 @@ namespace pushcs.Api
 		/// <returns></returns>
 		public Responses.PushResponse Push(string Private, string Event, string Channels = "", string Payload = "")
 		{
-			var x = System.Net.HttpWebRequest.CreateHttp(_baseUrl +  "/api/push");
-			x.UserAgent = _userAgent;
-
-			throw new NotImplementedException();
+			//var x = System.Net.HttpWebRequest.CreateHttp(_baseUrl +  "/api/push");
+			//x.UserAgent = _userAgent;
+			//x.Method = "POST";
+			var respstr = wc.Encoding.GetString(wc.UploadValues("/api/push", new System.Collections.Specialized.NameValueCollection
+			{
+				{ "private", Private },
+				{ "event", Event },
+				{ "channels", Channels },
+				{ "payload", Payload }
+			}));
+			return JsonConvert.DeserializeObject<Responses.PushResponse>(respstr);
 		}
 		/// <summary>
 		/// This method returns a list of all channels associated with your site. (including internal channels and the public chanel)
