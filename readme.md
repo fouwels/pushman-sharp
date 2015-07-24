@@ -1,6 +1,6 @@
 #Pushman-sharp
 
-c# api wrapper and shim client for the pushman (https://github.com/PushmanPHP/pushman) websockets event server
+c# wrapper and shim client for the pushman (https://github.com/PushmanPHP/pushman) websockets event server
 
 Calling endpoints directly
 
