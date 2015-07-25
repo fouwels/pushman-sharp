@@ -12,6 +12,9 @@ namespace pushcs
 		private string _key;
 		public Client(string SitePrivateKey, string HostUrl = "http://live.pushman.dfl.mn", string UserAgent = "")
         {
+			if (SitePrivateKey.Length != 60) {
+				throw new ArgumentException("Private Key must be 60 characters");
+			}
 			_key = SitePrivateKey;
 			var userAgent = UserAgent;
 			var baseUrl = (HostUrl.ToArray().Last() != '/') ? HostUrl : HostUrl.Remove(HostUrl.Length - 1);

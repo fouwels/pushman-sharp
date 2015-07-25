@@ -1,5 +1,5 @@
 ﻿{
-  "projects": [ "src", "test" ],
+  "projects": [ "src", "test", "pushcs", "pushcs-sample", "pushcs-xunit" ],
   "sdk": {
     "version": "1.0.0-beta5",
     "runtime": "clr",
