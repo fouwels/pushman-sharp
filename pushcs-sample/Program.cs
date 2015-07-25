@@ -29,7 +29,7 @@ namespace pushcs_sample
 				SitePrivateKey: testkey,
 				HostUrl: "http://live.pushman.dfl.mn/");
 
-			await client.PushEvent(Name: "ayy", Data: "{ \"ayy\" : \"lmao\" }");
+			var x = await client.PushEvent(Name: "ayy", Data: "{ \"ayy\" : \"lmao\" }");
 			//etc.
 		}
 	}
