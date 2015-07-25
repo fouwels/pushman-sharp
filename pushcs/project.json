@@ -1,10 +1,10 @@
 ﻿{
-	"version": "1.0.0-*",
-	"description": "pushcs Class Library",
-	"authors": [ "Kaelan" ],
-	"tags": [ "" ],
-	"projectUrl": "",
-	"licenseUrl": "",
+	"version": "1.2.1-*",
+	"description": "Pushman websockets event server API wrapper and shim client",
+	"authors": [ "Kaelan Fouwels", "@kfwls" ],
+	"tags": [ "Pushman", "PushmanPHP", "Pushman-php" ],
+	"projectUrl": "https://github.com/kfwls/pushman-sharp",
+	"licenseUrl": "https://github.com/philsturgeon/dbad",
 
 	"dependencies": {
 		"Newtonsoft.Json": "6.0.7",

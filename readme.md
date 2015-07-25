@@ -49,3 +49,5 @@ var f =	api.Subscribers(Private: testkey, Channel: "auth");
 Methods are documented through intellisense, or you can lookup the xml comments manually. Source documentation at: http://pushman.dfl.mn/documentation
 
 Use DNVM to build outside of visual studio, uses the vnext/asp.net 6 project system, rather than msbuild
+
+Available on nuget as package 'pushcs' (Install-Package pushcs) https://www.nuget.org/packages/pushcs/
