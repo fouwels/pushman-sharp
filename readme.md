@@ -2,6 +2,27 @@
 
 c# wrapper and shim client for the pushman (https://github.com/PushmanPHP/pushman) websockets event server
 
+## Installation
+```json
+Add dependency 'pushcs' to your project.json
+
+"dependencies": {
+	"pushcs": "1.2.1",
+},
+
+run a 'dnu restore' in console
+```
+
+To use local files rather then pulling off nuget, add pushcs (core) to the solution and drop the version number
+
+```json
+"dependencies": {
+	"pushcs": ""
+},
+```
+
+## Usage
+
 Using the shim client. Doesn't do much vs calling directly apart from provide friendly method names and shims into awaitable task<t>s
 
 ```csharp
