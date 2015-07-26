@@ -13,7 +13,7 @@ Add dependency 'pushcs' to your project.json
 run a 'dnu restore' in console
 ```
 
-To build from local files rather then pulling off nuget, add pushcs (core) to the solution and drop the version number
+To build from local files rather then pulling off nuget, add pushcs (core) to the solution and drop the version number.
 
 ```json
 "dependencies": {
@@ -23,7 +23,7 @@ To build from local files rather then pulling off nuget, add pushcs (core) to th
 
 ## Usage
 
-Using the shim client. Doesn't do much vs calling directly apart from provide friendly method names and shims into awaitable task<t>s
+Using the shim client. Doesn't do much vs calling directly apart from provide friendly method names and shims into awaitable task<t>s.
 
 ```csharp
 
@@ -36,7 +36,7 @@ await client.PushEvent(Name: "ayy", Data: "{ \"ayy\" : \"lmao\" }");
 
 ```
 
-Calling endpoints directly
+Calling endpoints directly.
 
 ```csharp
 var testkey = "this_is_a_60_char_string_that_looks_like_a_valid_private_key";
@@ -69,6 +69,6 @@ var f =	api.Subscribers(Private: testkey, Channel: "auth");
 
 Methods are documented through intellisense, or you can lookup the xml comments manually. Source documentation at: http://pushman.dfl.mn/documentation
 
-Use DNVM to build outside of visual studio, uses the vnext/asp.net 6 project system, rather than msbuild
+Use DNVM to build outside of visual studio, uses the vnext/asp.net 6 project system, rather than msbuild.
 
-Available on nuget as package 'pushcs' (Install-Package pushcs) https://www.nuget.org/packages/pushcs/
+Available on nuget as package 'pushcs' (Install-Package pushcs) https://www.nuget.org/packages/pushcs/.
