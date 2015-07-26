@@ -13,7 +13,7 @@ Add dependency 'pushcs' to your project.json
 run a 'dnu restore' in console
 ```
 
-To use local files rather then pulling off nuget, add pushcs (core) to the solution and drop the version number
+To build from local files rather then pulling off nuget, add pushcs (core) to the solution and drop the version number
 
 ```json
 "dependencies": {
