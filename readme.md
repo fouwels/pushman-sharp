@@ -1,6 +1,6 @@
 #Pushman-sharp
 
-c# wrapper and shim client for the pushman (https://github.com/PushmanPHP/pushman) websockets event server
+C# wrapper and shim client for the pushman (https://github.com/PushmanPHP/pushman) websockets event server.
 
 ## Installation
 ```json
